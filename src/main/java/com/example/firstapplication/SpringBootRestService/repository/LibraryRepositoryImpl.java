@@ -6,15 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LibraryRepositoryCustomImpl implements LibraryRepositoryCustom{
+public class LibraryRepositoryImpl implements LibraryRepositoryCustom{
 
 
+
+    @Autowired
 
     LibraryRepository repository;
-    @Autowired
-    public void setLibraryRepository(LibraryRepository repository){
-        this.repository = repository;
-    }
+
 
     @Override
     public List<Library> findAllByAuthor(String authorname) {

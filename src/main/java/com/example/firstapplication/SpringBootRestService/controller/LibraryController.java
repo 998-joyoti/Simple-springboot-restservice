@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 public class LibraryController {
@@ -67,11 +69,11 @@ public class LibraryController {
         }
     }
 
-//    @GetMapping("getBooks/author")
-//    public List<Library> getBookByAuthorName(@RequestParam(value="authorname")String authorname)
-//    {
-//        return repository.findAllByAuthor(authorname);
-//    }
+    @GetMapping("getBooks/author")
+    public List<Library> getBookByAuthorName(@RequestParam(value="authorname")String authorname)
+    {
+        return repository.findAllByAuthor(authorname);
+    }
 
     @PutMapping("/updateBook/{id}")
     public ResponseEntity<Library> updateBook(@PathVariable(value="id")String id,@RequestBody Library library)
